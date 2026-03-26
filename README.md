@@ -51,7 +51,11 @@ If n exceeds the allowed maximum, the API returns 400 Bad Request.
 Results are sorted by:
 score descending
 time descending
-Example Response
+
+```md
+## Example Response
+
+```json
 [
   {
     "id": 123456,
@@ -63,6 +67,8 @@ Example Response
     "comments": 120
   }
 ]
+```
+
 Swagger
 
 In development mode, you can explore and test the API using Swagger UI.
