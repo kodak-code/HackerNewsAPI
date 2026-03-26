@@ -90,14 +90,29 @@ IHttpClientFactory is used to manage HTTP connections properly
 Batching and Task.WhenAll are used to balance performance with external API load
 Invalid stories are filtered out to ensure clean and consistent results
 
-Project Structure
+## Project Structure
 
-src/
+```text
+HackerNewsAPI/
 ├── Controllers/
+│   └── StoriesController.cs        # API endpoints for retrieving stories
+│
+├── DTOs/
+│   └── StoryDTO.cs                 # Data Transfer Objects exposed by the API
+│
+├── Model/
+│   └── HnItem.cs                   # Internal representation of Hacker News items
+│
 ├── Services/
-├── Models/
-├── Caching/
-└── Program.cs
+│   ├── Interfaces/
+│   │   └── IHackerNewsService.cs   # Service contract
+│   └── HackerNewsService.cs        # Business logic and API integration
+│
+├── Properties/                     # Project configuration files
+├── appsettings.json                # Application configuration
+├── HackerNewsAPI.http              # HTTP test file for local requests
+└── Program.cs                      # Application entry point
+```
 
 Future Improvements
 Add unit and integration tests for service and controller layers
